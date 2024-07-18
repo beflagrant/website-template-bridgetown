@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: main
+  # # Here is the skeleton of a github pages auth
+  # name: github
+  # repo: username/reponame
+  # site_domain: www.example.com
+  # # Github does not allow implicit grants. Therefore,
+  # # you will have to run an auth server
+  # # 
+  # # See: https://github.com/decaporg/decap-cms/issues/663#issuecomment-335023723
+  # base_url: https://decap-oauth-d6e7vg5b33ea.herokuapp.com/
+  # auth_endpoint: auth
+  # cms_label_prefix: decap-cms/
+
+local_backend: true
+# Only enable if reviews are needed
+# publish_mode: editorial_workflow
+media_folder: src/images/uploads
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "src/_posts"
+    create: true
+    sortable_fields: ['order', 'title', 'date']
+    slug: "{{title}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: true}
+      - {label: "Order", name: "order", widget: "number", default: 1, value_type: "int", min: 1, max: 100}
