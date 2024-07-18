@@ -20,7 +20,9 @@
 url: "" # the base hostname & protocol for your site, e.g. https://example.com
 
 permalink: pretty
-template_engine: liquid
+
+# Serbea claims to support liquid and erb by file extension
+template_engine: serbea
 
 # Other options you might want to investigate:
 #
