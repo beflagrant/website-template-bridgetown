@@ -20,6 +20,17 @@ media_folder: src/images/uploads
 public_folder: "/images/uploads"
 
 collections:
+  - name: "site_metadata"
+    label: "Site content"
+    folder: "src/_data"
+    format: yml
+    create: false
+    fields:
+      - { label: "Site title", name: "title", widget: "string", required: true }
+      - { label: "Tagline", name: "tagline", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - { label: "Feedback email", name: "email", widget: "string", required: true }
+
   - name: "posts"
     label: "Posts"
     folder: "src/_posts"
