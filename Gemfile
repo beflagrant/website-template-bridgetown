@@ -38,3 +38,6 @@ gem "puma", "< 7"
 group :bridgetown_plugins do
   gem "bridgetown-svg-inliner", "~> 2.0"
 end
+group :development do
+  gem "foreman", "~> 0.88.1"
+end
