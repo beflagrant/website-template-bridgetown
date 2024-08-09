@@ -1,0 +1,23 @@
+{
+  "name": "Bridgetown.rb Development Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "rebornix.ruby",
+    "castwide.solargraph",
+    "EditorConfig.EditorConfig"
+  ],
+  "forwardPorts": [
+    4000
+  ],
+  "postCreateCommand": "cd /workspaces/website-template-bridgetown && bundle install && bin/bridgetown start",
+  "remoteUser": "root",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  "workspaceFolder": "/workspaces/website-template-bridgetown"
+}
