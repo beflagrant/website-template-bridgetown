@@ -14,7 +14,7 @@
   "forwardPorts": [
     4000
   ],
-  "postCreateCommand": "cd /workspaces/website-template-bridgetown && bundle install && bin/bridgetown start",
+  "postCreateCommand": "cd /workspace && bundle install && bin/bridgetown start",
   "remoteUser": "root",
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind"
