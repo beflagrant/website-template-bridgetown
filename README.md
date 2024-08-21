@@ -16,18 +16,17 @@ Welcome to your new Bridgetown website! You can update this README file to provi
 - [GCC](https://gcc.gnu.org/install/)
 - [Make](https://www.gnu.org/software/make/)
 - [Ruby](https://www.ruby-lang.org/en/downloads/)
-  - `>= 2.7`
+  - `>= 3.14`
 - [Bridgetown Gem](https://rubygems.org/gems/bridgetown)
   - `gem install bridgetown -N`
 - [Node](https://nodejs.org)
-  - `>= 12`
-- [Yarn](https://yarnpkg.com)
+  - `>= 20`
 
 ## Install
 
 ```sh
 cd bridgetown-site-folder
-bundle install && yarn install
+bundle install && npm install
 ```
 > Learn more: [Bridgetown Getting Started Documentation](https://www.bridgetownrb.com/docs/).
 
