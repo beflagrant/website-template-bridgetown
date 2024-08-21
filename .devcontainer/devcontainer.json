@@ -14,10 +14,9 @@
   "forwardPorts": [
     4000
   ],
-  "postCreateCommand": "cd /workspace && bundle install && yarn install && foreman start",
+  "postCreateCommand": "cd /workspace && bundle install && npm install && foreman start",
   "remoteUser": "root",
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind"
-  ],
-  "workspaceFolder": "/workspaces/website-template-bridgetown"
+  ]
 }
