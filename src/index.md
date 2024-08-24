@@ -6,7 +6,14 @@ layout: default
 
 # Welcome to your newly upgraded Bridgetown 2.0.0.beta2 website.
 
+width: 200px
+![Blue Marble](<%= resized_image_path("images/blue-marble.jpg", width: 200) %>)
+
+width: 400px
 ![Blue Marble](<%= resized_image_path("images/blue-marble.jpg", width: 400) %>)
+
+width: 1024px
+![Blue Marble](<%= resized_image_path("images/blue-marble.jpg", width: 1024) %>)
 
 You can learn more about how to build and deploy your new website by reading the  [Bridgetown documentation](https://www.bridgetownrb.com/docs).
 
