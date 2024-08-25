@@ -8,20 +8,23 @@ RUN apt-get update && apt-get install -y \
     nodejs \
     npm
 
+# Set environment variables for gems
+ENV BUNDLE_PATH=/usr/local/bundle
+
 # Set the working directory in the container
 WORKDIR /workspace
 
 # Copy Gemfile and Gemfile.lock for Ruby gems installation
 COPY Gemfile ./
 COPY Gemfile.lock ./
+RUN gem install bundler foreman && bundle install
 
+# Copy package.json for npm install
 COPY package.json ./
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
-
-# Install Ruby gems and cache them
-RUN gem install bundler && bundle install
 
 # Expose the port Bridgetown will run on
 EXPOSE 4000

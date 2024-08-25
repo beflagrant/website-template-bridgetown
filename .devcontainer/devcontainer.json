@@ -14,7 +14,7 @@
   "forwardPorts": [
     4000
   ],
-  "postCreateCommand": "cd /workspace && bundle install && npm install && foreman start",
+  "postCreateCommand": "cd /workspace && foreman start",
   "remoteUser": "root",
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind"
