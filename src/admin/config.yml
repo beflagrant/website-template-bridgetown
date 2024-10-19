@@ -7,7 +7,7 @@ backend:
   # site_domain: www.example.com
   # # Github does not allow implicit grants. Therefore,
   # # you will have to run an auth server
-  # # 
+  # #
   # # See: https://github.com/decaporg/decap-cms/issues/663#issuecomment-335023723
   # base_url: https://decap-oauth-d6e7vg5b33ea.herokuapp.com/
   # auth_endpoint: auth
