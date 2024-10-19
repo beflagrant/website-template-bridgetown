@@ -9,10 +9,9 @@
         "terminal.integrated.shell.linux": "/bin/bash"
       },
       "extensions": [
-        "EditorConfig.EditorConfig",
-        "Shopify.ruby-lsp",
-        "jnbt.vscode-rufo", // requires RUFO gem
-        "aliariff.vscode-erb-beautify" // requires HTML Beautifier gem
+        "rebornix.ruby",
+        "castwide.solargraph",
+        "EditorConfig.EditorConfig"
       ]
     }
   },
