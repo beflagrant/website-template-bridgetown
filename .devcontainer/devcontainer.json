@@ -11,6 +11,7 @@
       "extensions": [
         "Shopify.ruby-lsp",
         "testdouble.vscode-standard-ruby",
+        "aliariff.vscode-erb-beautify",
         "EditorConfig.EditorConfig"
       ]
     }

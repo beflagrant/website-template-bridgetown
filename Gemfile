@@ -48,3 +48,6 @@ end
 # page to be accurate and indeed I was able to finally get this up and running
 # with VSCode's "Ruby LSP" plugin
 gem "standard", "~> 1.41", ">= 1.41.1"
+
+# This is the gem that powers the ERB formatting extension
+gem "htmlbeautifier", "~> 1.3", ">= 1.3.1"
