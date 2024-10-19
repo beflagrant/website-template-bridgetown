@@ -38,8 +38,13 @@ gem "puma", "< 7"
 group :bridgetown_plugins do
   gem "bridgetown-svg-inliner", "~> 2.0"
 end
+
 group :development do
   gem "foreman", "~> 0.88.1"
 end
 
-gem "solargraph", "~> 0.50.0"
+# This is for formatting, etc. It also lints but honestly I picked it because I
+# needed a formatter and I figured I could TestDouble's setup docs and debugging
+# page to be accurate and indeed I was able to finally get this up and running
+# with VSCode's "Ruby LSP" plugin
+gem "standard", "~> 1.41", ">= 1.41.1"

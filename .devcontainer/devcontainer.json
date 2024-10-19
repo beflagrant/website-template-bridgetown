@@ -9,8 +9,8 @@
         "terminal.integrated.shell.linux": "/bin/bash"
       },
       "extensions": [
-        "rebornix.ruby",
-        "castwide.solargraph",
+        "Shopify.ruby-lsp",
+        "testdouble.vscode-standard-ruby",
         "EditorConfig.EditorConfig"
       ]
     }
