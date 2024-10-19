@@ -3,14 +3,19 @@
   "build": {
     "dockerfile": "../Dockerfile"
   },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "Shopify.ruby-lsp",
+        "jnbt.vscode-rufo", // requires RUFO gem
+        "aliariff.vscode-erb-beautify" // requires HTML Beautifier gem
+      ]
+    }
   },
-  "extensions": [
-    "rebornix.ruby",
-    "castwide.solargraph",
-    "EditorConfig.EditorConfig"
-  ],
   "forwardPorts": [
     4000
   ],
