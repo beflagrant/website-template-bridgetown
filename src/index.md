@@ -4,7 +4,9 @@
 layout: default
 ---
 
-# Welcome to your newly upgraded Bridgetown 2.0 website.
+# Welcome to your newly upgraded Bridgetown 2.0.0.beta2 website.
+
+![Blue Marble](<%= resized_image_path("images/blue-marble.jpg", width: 400) %>)
 
 You can learn more about how to build and deploy your new website by reading the  [Bridgetown documentation](https://www.bridgetownrb.com/docs).
 
