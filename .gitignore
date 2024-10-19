@@ -39,3 +39,6 @@ frontend/styles/jit-refresh.css
 
 # Ignore temporary folder
 tmp/
+
+# Ignore developer settings
+.vscode/
