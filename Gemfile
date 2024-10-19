@@ -41,13 +41,13 @@ end
 
 group :development do
   gem "foreman", "~> 0.88.1"
+  # This is for formatting, etc. It also lints but honestly I picked it because I
+  # needed a formatter and I figured I could TestDouble's setup docs and debugging
+  # page to be accurate and indeed I was able to finally get this up and running
+  # with VSCode's "Ruby LSP" plugin
+  gem "standard", "~> 1.41", ">= 1.41.1"
+
+  # This is the gem that powers the ERB formatting extension
+  # NOTE:@MAX: I had to go into the container and run `gem install...` this myself
+  gem "htmlbeautifier", "~> 1.4.3"
 end
-
-# This is for formatting, etc. It also lints but honestly I picked it because I
-# needed a formatter and I figured I could TestDouble's setup docs and debugging
-# page to be accurate and indeed I was able to finally get this up and running
-# with VSCode's "Ruby LSP" plugin
-gem "standard", "~> 1.41", ">= 1.41.1"
-
-# This is the gem that powers the ERB formatting extension
-gem "htmlbeautifier", "~> 1.3", ">= 1.3.1"
