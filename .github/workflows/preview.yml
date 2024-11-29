@@ -35,7 +35,8 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      - uses: ruby/setup-ruby@v1
+      # Github Actions recommends pinning to a SHA
+      - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
         with:
           ruby-version: ${{ matrix.ruby-version }}
           rubygems: latest
