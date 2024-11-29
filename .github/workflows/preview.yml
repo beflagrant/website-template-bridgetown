@@ -2,7 +2,7 @@
 name: Deploy PR previews
 
 env:
-  BASE_URL: https://www.beflagrant.com/
+  # BASE_URL: https://www.example.com
 
 on:
   pull_request:
@@ -56,4 +56,4 @@ jobs:
         with:
           source-dir: ./output/
           umbrella-dir: 'preview'
-          custom-url: 'www.beflagrant.com'
+          # custom-url: 'www.example.com'
