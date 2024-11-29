@@ -62,7 +62,7 @@ Bridgetown.configure do |config|
   # visit: https://edge.bridgetownrb.com/docs/configuration/initializers/
 
   # config.url = "https://www.example.com"
-  config.base_path = "/website-template-bridgetown" + ENV.fetch("BASE_PATH", "/")
+  config.base_path = ENV.fetch("BASE_PATH", "/")
   config.base_url = config.url + config.base_path
 
   init :"bridgetown-svg-inliner"

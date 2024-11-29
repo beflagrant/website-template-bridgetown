@@ -46,7 +46,7 @@ jobs:
         run: touch frontend/styles/jit-refresh.css
 
       - name: Set base path
-        run: echo "BASE_PATH=/preview/pr-${{github.event.number}}" >> $GITHUB_ENV
+        run: echo "BASE_PATH=/website-template-bridgetown/preview/pr-${{github.event.number}}" >> $GITHUB_ENV
 
       - name: Build site
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
