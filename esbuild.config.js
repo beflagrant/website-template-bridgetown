@@ -45,6 +45,7 @@ const esbuildOptions = {
   plugins: [
     // add new plugins here...
   ],
+  publicPath: path.join(process.env.BASE_PATH, "_bridgetown", "static"),
   globOptions: {
     excludeFilter: /\.(dsd|lit)\.css$/
   }
