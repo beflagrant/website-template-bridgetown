@@ -1,7 +1,7 @@
 # .github/workflows/preview.yml
 name: Deploy PR previews
 
-env:
+# env:
   # BASE_URL: https://www.example.com
 
 on:
