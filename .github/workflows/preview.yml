@@ -36,7 +36,7 @@ jobs:
         run: npm install
 
       # Github Actions recommends pinning to a SHA
-      - uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+      - uses: ruby/setup-ruby@6825c765eb33355054208d865dd846da7da6584f
         with:
           ruby-version: ${{ matrix.ruby-version }}
           rubygems: latest
