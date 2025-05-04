@@ -1,0 +1,59 @@
+# .github/workflows/deploy-site.yml
+name: Deploy Site to Github Pages
+env:
+  URL: https://www.example.com
+  BASE_URL: https://www.example.com/
+  BASE_PATH: /
+
+on:
+  push:
+    branches:
+      - main # deploy main. If your branch is `master`, you'll have to replace that throughout this file.
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22]
+        ruby-version: [3.3.4]
+    steps:
+      - uses: honeybadger-io/github-notify-deploy-action@v1
+        with:
+          api_key: ${{ secrets.HONEYBADGER_API_KEY }}
+
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          rubygems: latest
+          bundler-cache: true
+
+      - name: Write jit-refresh
+        run: touch frontend/styles/jit-refresh.css
+
+      - name: Set base_url
+        run: echo "BASE_URL=$URL" >> $GITHUB_ENV
+
+      - name: Build site
+        run: npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # This is the default value repeated for documentation sake
+          clean-exclude: |
+            preview/
+            output/.nojekyll
+          folder: output
+          git-config-email: support+actions@github.com # not a human

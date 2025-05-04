@@ -1,0 +1,60 @@
+# .github/workflows/preview.yml
+name: Deploy PR previews
+
+# env:
+  # BASE_URL: https://www.example.com
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22]
+        ruby-version: [3.3.4]
+    env:
+      PR_NUMBER: ${{github.event.number}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+  
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      # Github Actions recommends pinning to a SHA
+      - uses: ruby/setup-ruby@6825c765eb33355054208d865dd846da7da6584f
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          rubygems: latest
+          bundler-cache: true
+
+      - name: Write jit-refresh
+        run: touch frontend/styles/jit-refresh.css
+
+      - name: Set base path
+        run: echo "BASE_PATH=/website-template-bridgetown/preview/pr-${{github.event.number}}" >> $GITHUB_ENV
+
+      - name: Build site
+        if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
+        run: npm run build
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./output/
+          umbrella-dir: 'preview'
+          # custom-url: 'www.example.com'
