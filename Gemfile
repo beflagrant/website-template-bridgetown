@@ -34,6 +34,7 @@ gem "puma", "< 7"
 
 # Or for faster parsing of HTML-only resources via Inspectors, use Nokolexbor:
 # gem "nokolexbor", "~> 0.4"
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
 
 group :bridgetown_plugins do
   gem "bridgetown-svg-inliner", "~> 2.0"
